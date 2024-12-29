@@ -1,1 +1,1 @@
-This is simple Node web application used for CICD pipeline demo with Jenkins, Docker and Kubernetes.
+This is simple Node web application used for CICD pipeline demo with Jenkins, Docker and Kubernetes Minikube.
