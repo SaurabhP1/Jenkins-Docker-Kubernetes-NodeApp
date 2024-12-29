@@ -2,7 +2,7 @@ FROM node:alpine
 
 WORKDIR /express-app
 
-COPY package.json .
+COPY src/package.json .
 
 RUN npm install
 
@@ -10,7 +10,7 @@ COPY . .
 
 EXPOSE 3000
 
-CMD [ "node", "index.js" ]
+CMD [ "node", "src/index.js" ]
 
 
 # This Dockerfile sets up a Node.js environment, installs dependencies, 
