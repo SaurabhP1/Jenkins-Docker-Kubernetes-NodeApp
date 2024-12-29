@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: "webserver-deployment"
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: node-webserver
+  template:
+    metadata:
+      labels:
+        app: node-webserver
+    spec:
+      containers:
+        - name: webserver
+          image: saurabhh1/myrepo:node-1
+          ports: 
+            - containerPort: 3000
+      imagePullSecrets: 
+        - name: dockerhub-secret
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webserver-service
+spec:
+  type: NodePort
+  selector: 
+    app: node-webserver
+  ports:
+    - port: 3000
+      targetPort: 3000
+      nodePort: 30007
