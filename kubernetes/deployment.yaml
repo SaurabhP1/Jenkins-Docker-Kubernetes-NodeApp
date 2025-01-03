@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: webserver
-          image: saurabhh1/myrepo:node-1
+          image: saurabhh1/myrepo:node-6
           ports: 
             - containerPort: 3000
       imagePullSecrets: 
